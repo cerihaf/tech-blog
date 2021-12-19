@@ -52,19 +52,19 @@
       </div>
     </header>
 
-   <!-- <div class="nav-scroller py-1 mb-2">
+   <div class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
-          {{#if loggedIn}}
-          <button id="logout" class="p-2 link-secondary">logout</button>
-          {{else}}
-          <a class="p-2 link-secondary" href="/login">login</a>
-          {{/if}}
+          <a class="p-2 link-secondary" href="/admin/new">New Post</a>
+          <a class="p-2 link-secondary" href="/">Feed</a>
       </nav>
-    </div> -->
+    </div> 
   </div>
     <main class="container">
        <div class="row g-5">
         <div class="col-md-12">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Your Recent Articles
+          </h3>
           <section class="my-5">
             {{{ body }}}
           </section>

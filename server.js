@@ -20,6 +20,11 @@ const sess = {
 };
 
 app.use(session(sess));
+// add in local session variables to handlebars
+app.use(function (req, res, next) {
+    res.locals.session = req.session;
+    next();
+});
 
 const hbs = exphbs.create({});
 
@@ -32,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+app.listen(PORT, () => {
+  console.log('Now listening');
+  sequelize.sync({ force: false });
 });
